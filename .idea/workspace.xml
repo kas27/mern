@@ -2,43 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beb0c445-9c7b-4095-a49c-0ecd68a17af5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/config/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/config/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.prettierrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/default.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/production.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/queries/accounts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/queries/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/queries/items.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/queries/linkEvents.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/queries/plaidApiEvents.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/queries/transactions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/queries/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middleware.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/plaid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/accounts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/institutions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/items.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/linkEvents.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/services.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/unhandled.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/webhookHandlers/handleItemWebhook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/webhookHandlers/handleTransactionsWebhook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/webhookHandlers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/webhookHandlers/unhandledWebhook.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +51,7 @@
       <updated>1581516559682</updated>
       <workItem from="1581516560812" duration="1819000" />
       <workItem from="1581952494832" duration="3976000" />
-      <workItem from="1582017495283" duration="2564000" />
+      <workItem from="1582017495283" duration="3135000" />
     </task>
     <task id="LOCAL-00001" summary="add react plaid link">
       <created>1581517220774</created>
@@ -107,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582018047935</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="change all structure">
+      <created>1582020169311</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582020169311</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,22 +91,23 @@
     <MESSAGE value="add react plaid link" />
     <MESSAGE value="add pattern" />
     <MESSAGE value="change configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="change configs" />
+    <MESSAGE value="change all structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="change all structure" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="985" y="168" width="865" height="912" key="CommitChangelistDialog2" timestamp="1582018047889">
+    <state x="985" y="168" width="865" height="912" key="CommitChangelistDialog2" timestamp="1582020169253">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="985" y="168" width="865" height="912" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582018047889" />
+    <state x="985" y="168" width="865" height="912" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582020169253" />
     <state x="2905" y="219" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581517220711" />
     <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581952591193">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1581952591193" />
-    <state x="555" y="295" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1582018054541">
+    <state x="555" y="295" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1582020172881">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="295" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582018054541" />
+    <state x="555" y="295" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582020172881" />
     <state x="2475" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581517223873" />
   </component>
 </project>
