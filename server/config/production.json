@@ -1,6 +1,6 @@
 {
-  "port": 5000,
-  "baseUrl": "http://localhost:5000",
+  "port": 80,
+  "baseUrl": "http://snowball27.me",
   "PLAID_CLIENT_ID": "5e42b0fbd52ab600127a772f",
   "PLAID_PUBLIC_KEY": "aa45ff14d6c44b9bdb2a93fa7a256f",
   "PLAID_SECRET_DEVELOPMENT": "f3792952515c0b8a2e957ee7a37be1",

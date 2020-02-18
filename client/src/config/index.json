@@ -1,5 +1,5 @@
 {
-  "PORT": 5000,
+  "PORT": 80,
   "PLAID_ENV": "sandbox",
   "REACT_APP_PLAID_PUBLIC_KEY": "aa45ff14d6c44b9bdb2a93fa7a256f"
 }
