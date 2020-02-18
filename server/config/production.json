@@ -1,0 +1,16 @@
+{
+  "port": 5000,
+  "baseUrl": "http://localhost:5000",
+  "PLAID_CLIENT_ID": "5e42b0fbd52ab600127a772f",
+  "PLAID_PUBLIC_KEY": "aa45ff14d6c44b9bdb2a93fa7a256f",
+  "PLAID_SECRET_DEVELOPMENT": "f3792952515c0b8a2e957ee7a37be1",
+  "PLAID_SECRET_SANDBOX": "48c794026204b984cecb8cfebadb3a",
+
+
+  "DB_NAME": "plaid_db",
+  "DB_HOST_NAME": "3.123.227.152",
+  "DB_PORT": "5433",
+  "POSTGRES_USER": "plaid_pattern",
+  "POSTGRES_PASSWORD": "rPzh@D5&&g!Kn",
+  "PLAID_ENV": "sandbox"
+}
