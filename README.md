@@ -1,90 +1,37 @@
-# Plaid Pattern
+# Plaid Pattern - Server
 
-![Plaid Pattern client][client-img]
+The application server is written in JavaScript using [Node.js][nodejs] and [Express][expressjs]. It interacts with the Plaid API via the [Plaid Node SDK][plaid-node], and with the [database][database-readme] using [`node-postgres`][node-pg]. While we've used Node for the reference implementation, the concepts shown here will apply no matter what language your backend is written in.
 
-This is a reference application demonstrating an end-to-end [Plaid][plaid] integration, focused on linking items and fetching transaction data.
+## Key Concepts
 
-**This is not meant to be run as a production application.**
+### Associating users with Plaid items and access tokens
 
-## Requirements
+Plaid does not have a user data object for tying multiple items together, so it is up to application developers to define that relationship. For an example of this, see the [root items route][items-routes] (used to store new items) and the [users routes][users-routes].
 
--   [Docker][docker] Version 2.0.0.3 (31259) or higher, installed, running, and signed in. If you're on **Windows**, check out [this link][wsl] to get set up in WSL.
--   [Plaid API keys][plaid-keys] - [sign up][plaid-signup] for a free Sandbox account if you don't already have one
+### Preventing item duplication
 
-## Getting Started
+By default, Plaid Link will let a user link to the same institution multiple times. Some developers prefer disallowing duplicate account linkages because duplicate connections still come at an additional cost. It is entirely possible for a user to create multiple items linked to the same financial institution. In practice, you probably want to prevent this. The easiest way to do this is to check the institution id of a newly created item before performing the token exchange and storing the item. For an example of this, see the [root items route][items-routes].
 
-Note: We recommend running these commands in a unix terminal. Windows users can use a [WSL][wsl] terminal to access libraries like `make`.
+### Using webhooks to update transaction data
 
-1. Clone the repo.
-    ```shell
-    git clone https://github.com/plaid/pattern.git
-    cd pattern
-    ```
-1. Create the `.env` file.
-    ```shell
-    cp .env.template .env
-    ```
-1. Update the `.env` file with your [Plaid API keys][plaid-keys].
-1. Start the services. The first run may take a few minutes as Docker images are pulled/built for the first time.
-    ```shell
-    make start
-    ```
-1. Open http://localhost:3000 in a web browser.
-1. When you're finished, stop the services.
-    ```shell
-    make stop
-    ```
+Plaid uses [webhooks][transactions-webhooks] to notify you whenever there are new transactions associated with an item. This allows you to make a call to Plaid's transactions endpoint only when there are new transactions available, rather than polling for them. For an example of this, see the [transactions webhook handler][transactions-handler].
 
-## Additional Commands
+For webhooks to work, the server must be publicly accessible on the internet. For development purposes, this application uses [ngrok][ngrok-readme] to accomplish that.
 
-All available commands can be seen by calling `make help`.
+## Debugging
 
-## Architecture
+The node debugging port (9229) is exposed locally on port 9229.
 
-As a modern full-stack application, Pattern consists of multiple services handling different segments of the stack:
+If you are using Visual Studio Code as your editor, you can use the `Docker: Attach to Server` launch configuration to interactively debug the server while it's running. See the [VS Code docs][vscode-debugging] for more information.
 
--   [`database`][database-readme] runs a [PostgreSQL][postgres] database
--   [`server`][server-readme] runs an application back-end server using [NodeJS] and [Express]
--   [`client`][client-readme] runs a [React]-based single-page web frontend
--   [`ngrok`][ngrok-readme] exposes a [ngrok] tunnel from your local machine to the Internet to receive webhooks
-
-We use [Docker Compose][docker-compose] to orchestrate these services. As such, each individual service has its own Dockerfile, which Docker Compose reads when bringing up the services.
-
-For more information about the individual services, see their readmes, linked in the list above.
-
-## Troubleshooting
-
-See [`docs/troubleshooting.md`][troubleshooting].
-
-## Additional Resources
-
--   For an overview of the Plaid platform and products, refer to this [Quickstart guide][plaid-quickstart].
--   Check out this high-level [introduction to Plaid Link](https://blog.plaid.com/plaid-link/).
--   Find comprehensive information on Plaid API endpoints in the [API documentation][plaid-docs].
--   Questions? Please head to the [Help Center][plaid-help] or [open a Support ticket][plaid-support-ticket].
-
-## License
-
-[MIT](LICENSE)
-
-[client-img]: docs/pattern_screenshot.png
-[client-readme]: client/README.md
-[database-readme]: database/README.md
-[docker]: https://docs.docker.com/
-[docker-compose]: https://docs.docker.com/compose/
-[express]: https://expressjs.com/
-[ngrok]: https://ngrok.com/
-[ngrok-readme]: ngrok/README.md
+[database-readme]: ../database/README.md
+[expressjs]: http://expressjs.com/
+[items-routes]: routes/items.js
+[ngrok-readme]: ../ngrok/README.md
+[node-pg]: https://github.com/brianc/node-postgres
 [nodejs]: https://nodejs.org/en/
-[plaid]: https://plaid.com
-[plaid-docs]: https://plaid.com/docs/
-[plaid-help]: https://support.plaid.com/hc/en-us
-[plaid-keys]: https://dashboard.plaid.com/account/keys
-[plaid-quickstart]: https://plaid.com/docs/quickstart/
-[plaid-signup]: https://dashboard.plaid.com/signup
-[plaid-support-ticket]: https://dashboard.plaid.com/support/new
-[postgres]: https://www.postgresql.org/
-[react]: http://reactjs.org/
-[server-readme]: server/README.md
-[troubleshooting]: docs/troubleshooting.md
-[wsl]: https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
+[plaid-node]: https://github.com/plaid/plaid-node
+[transactions-handler]: webhookHandlers/handleTransactionsWebhook.js
+[transactions-webhooks]: https://plaid.com/docs/#transactions-webhooks
+[users-routes]: routes/users.js
+[vscode-debugging]: https://code.visualstudio.com/docs/editor/debugging
