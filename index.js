@@ -22,7 +22,7 @@ const {
 } = require('./routes');
 
 const app = express();
-const PORT = config.get('port') || 5000;
+const PORT = config.get('port');
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')));
